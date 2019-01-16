@@ -4,6 +4,7 @@ import unittest
 from core.elevator import Elevator
 
 class Test_elevator_state(unittest.TestCase):
+
     def setUp(self):
         self.elevator = Elevator(5, 15)
 
