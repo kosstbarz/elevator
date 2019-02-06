@@ -9,10 +9,14 @@ class Elevator (object):
         self.inner_door_open = 0
         self.buttons_pushed = {'inner': [], 'outer': []}
 
-    def wait(self, time):
-        pass
-
     def push_outer(self, lev):
-        self.wait(self)
-        self.level = lev
-        self.height = 1 + lev
+        self.buttons_pushed['outer'] = lev
+
+    def timestep(self, time):
+        if self.buttons_pushed['outer']:
+            if self.buttons_pushed['outer'] != self.level:
+                self.level = self.buttons_pushed['outer']
+                self.height = self.buttons_pushed['outer'] + 1
+
+
+
