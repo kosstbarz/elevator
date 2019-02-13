@@ -4,11 +4,12 @@ import unittest
 from core.elevator import Elevator
 
 class Test_elevator_state(unittest.TestCase):
+
     def setUp(self):
         self.elevator = Elevator(5, 15)
 
     def test_wait(self):
-        self.elevator.wait(10)
+        self.elevator.timestep(10)
 
     def test_check_height(self):
         self.assertEqual(self.elevator.height, 0)
@@ -33,8 +34,8 @@ class Test_elevator_movement(unittest.TestCase):
         self.elevator = Elevator(5, 15)
 
     def test_go_to_level(self):
-        self.elevator.wait(10)
+        self.elevator.timestep(10)
         self.elevator.push_outer(2)
-        self.elevator.wait(100)
+        self.elevator.timestep(100)
         self.assertEqual(self.elevator.height, 3)
         self.assertEqual(self.elevator.level, 2)

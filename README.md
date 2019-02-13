@@ -11,3 +11,4 @@ Elevators status can be checked by:
 4) Speed of movement
 5) Weight panel (if anybody is inside)
 6) Buttons pushed (both inside and outside)
+7) checking
