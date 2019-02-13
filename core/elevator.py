@@ -24,8 +24,9 @@ class Elevator (object):
                     speed -= 1
                 self.level = self.buttons_pushed['outer']
                 self.height = self.buttons_pushed['outer'] + 1
-                self.speed = 0
-                self.inner_door_open = 1
+                if self.level == self.buttons_pushed:
+                    self.speed = 0
+                    self.inner_door_open = 1
                 if self.weight == 0:
                     self.inner_door_open = 0
 
