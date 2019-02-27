@@ -18,7 +18,7 @@ class Elevator (object):
             if self.weight > 0:
                 self.inner_door_open = 0
             if self.buttons_pushed['outer'] != self.level:
-                if self.buttons_pushed ['outer'] - self.level > 0:
+                if self.buttons_pushed['outer'] - self.level > 0:
                     self.speed += 1
                 else:
                     speed -= 1
