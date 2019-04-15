@@ -54,5 +54,5 @@ class Test_elevator_movement(unittest.TestCase):
         self.elevator.timestep(100)
         self.elevator.push_inner(1)
         self.elevator.timestep(100)
-        self.assertEqual(self.elevator.height, 2)
+        self.assertEqual(self.elevator.height, 0)
         self.assertEqual(self.elevator.level, 1)
