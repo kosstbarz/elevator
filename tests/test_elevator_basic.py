@@ -56,3 +56,20 @@ class Test_elevator_movement(unittest.TestCase):
         self.elevator.timestep(100)
         self.assertEqual(self.elevator.height, 0)
         self.assertEqual(self.elevator.level, 1)
+
+class Test_elevator_doors(unittest.TestCase):
+    def setUp(self):
+        self.elevator = Elevator(5, 15, 1, 3, 1)
+
+    def test_let_people_come(self):
+        self.elevator.push_outer(2)
+        self.elevator.timestep(3)
+        self.assertEqual(self.elevator.height, 3)
+        self.assertEqual(self.elevator.level, 1)
+        self.assertEqual(self.elevator.inner_door_open, 0)
+        self.elevator.timestep(3)
+        self.assertEqual(self.elevator.inner_door_open, 1)
+        self.elevator.timestep(1)
+        self.assertEqual(self.elevator.inner_door_open, 1)
+        self.elevator.timestep(3)
+        self.assertEqual(self.elevator.inner_door_open, 0)
